@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.CeshishujuDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.CeshishujuEntity" id="ceshishujuMap">
+        <result property="ceshibianhao" column="ceshibianhao"/>
+        <result property="ceshimingcheng" column="ceshimingcheng"/>
+        <result property="yonghuming" column="yonghuming"/>
+        <result property="yonghuxingming" column="yonghuxingming"/>
+        <result property="huida1" column="huida1"/>
+        <result property="huida2" column="huida2"/>
+        <result property="huida3" column="huida3"/>
+        <result property="huida4" column="huida4"/>
+        <result property="huida5" column="huida5"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.CeshishujuVO" >
+		SELECT * FROM ceshishuju  ceshishuju         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.CeshishujuVO" >
+		SELECT  ceshishuju.* FROM ceshishuju  ceshishuju 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.CeshishujuView" >
+
+		SELECT  ceshishuju.* FROM ceshishuju  ceshishuju 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.CeshishujuView" >
+		SELECT * FROM ceshishuju  ceshishuju <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+</mapper>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.YaliceshiDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.YaliceshiEntity" id="yaliceshiMap">
+        <result property="ceshimingcheng" column="ceshimingcheng"/>
+        <result property="tupian" column="tupian"/>
+        <result property="jianjie" column="jianjie"/>
+        <result property="timu1" column="timu1"/>
+        <result property="timu2" column="timu2"/>
+        <result property="timu3" column="timu3"/>
+        <result property="timu4" column="timu4"/>
+        <result property="timu5" column="timu5"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.YaliceshiVO" >
+		SELECT * FROM yaliceshi  yaliceshi         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.YaliceshiVO" >
+		SELECT  yaliceshi.* FROM yaliceshi  yaliceshi 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.YaliceshiView" >
+
+		SELECT  yaliceshi.* FROM yaliceshi  yaliceshi 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.YaliceshiView" >
+		SELECT * FROM yaliceshi  yaliceshi <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+</mapper>
